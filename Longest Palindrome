@@ -1,0 +1,16 @@
+code:
+
+int longestPalindrome(string s) {
+        int ans = 0;
+        int oddCount = 0;
+        unordered_map<char,int> mp;
+        for(char c:s){
+            mp[c]++;
+            if(mp[c]%2 ==1){
+                oddCount++;
+            }
+            else oddCount--;
+        }
+        if(oddCount > 1) return s.length() - oddCount +1;
+        return s.length();
+    }
